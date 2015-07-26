@@ -6,7 +6,7 @@ public int SearchInsert(int[] A, int target) {
 	int start = 0, end = A.length - 1;
 	
 	while (start + 1 < end) {
-		int mid = start + (end - start) / 2;
+		int mid = start + (end - start) / 2;// avoid overflow
 		if (A[mid] == target) {
 			return mid;
 		} else if (A[mid] < target) {
@@ -26,7 +26,7 @@ public int SearchInsert(int[] A, int target) {
 
 //Solution 2: find the last position < target, return + 1
 public int SearchInsert(int[] A, int target) {
-	if (A == null) || A.length == 0) {
+	if (A == null || A.length == 0) {
 		return 0;
 	}
 	int start = 0;
